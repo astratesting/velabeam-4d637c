@@ -1,0 +1,349 @@
+/* ==========================================================================
+   VelaBeam — Global Styles
+   ========================================================================== */
+
+/* ---- Google Fonts (must come before all other rules) ---- */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&display=swap");
+
+/* ---- Design Tokens ---- */
+@import "../styles/tokens.css";
+
+/* ==========================================================================
+   Tailwind v4 @theme — Expose custom properties
+   ========================================================================== */
+@theme {
+  --color-vb-bg: var(--vb-bg);
+  --color-vb-surface: var(--vb-surface);
+  --color-vb-violet: var(--vb-violet);
+  --color-vb-coral: var(--vb-coral);
+  --color-vb-honey: var(--vb-honey);
+  --color-vb-ink: var(--vb-ink);
+  --color-vb-mute: var(--vb-mute);
+  --color-vb-line: var(--vb-line);
+  --color-vb-violet-hover: var(--vb-violet-hover);
+  --color-vb-coral-hover: var(--vb-coral-hover);
+  --color-vb-honey-hover: var(--vb-honey-hover);
+  --color-vb-success: var(--vb-success);
+  --color-vb-error: var(--vb-error);
+
+  --font-heading: var(--vb-font-heading);
+  --font-body: var(--vb-font-body);
+
+  --radius-card: var(--vb-radius-card);
+  --radius-input: var(--vb-radius-input);
+  --radius-pill: var(--vb-radius-pill);
+
+  --shadow-warm: var(--vb-shadow-warm);
+  --shadow-card: var(--vb-shadow-card);
+  --shadow-elevated: var(--vb-shadow-elevated);
+}
+
+/* ==========================================================================
+   Base / Reset
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  font-family: var(--vb-font-body);
+  font-size: var(--vb-text-body);
+  line-height: 1.6;
+  color: var(--vb-ink);
+  background-color: var(--vb-bg);
+}
+
+/* ---- Headings ---- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--vb-font-heading);
+  line-height: 1.2;
+  letter-spacing: var(--vb-tracking-tight);
+  color: var(--vb-ink);
+  margin-top: 0;
+}
+
+h1 {
+  font-size: var(--vb-text-hero);
+  line-height: var(--vb-text-hero-lh);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--vb-text-section);
+  line-height: var(--vb-text-section-lh);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--vb-text-card);
+  line-height: var(--vb-text-card-lh);
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: var(--vb-text-body);
+  font-weight: 600;
+}
+
+h6 {
+  font-size: var(--vb-text-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--vb-tracking-wide);
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: var(--vb-violet);
+  text-decoration: none;
+  transition: color var(--vb-transition-fast);
+}
+
+a:hover {
+  color: var(--vb-violet-hover);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   Layout Utilities
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--vb-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--vb-space-lg);
+  padding-right: var(--vb-space-lg);
+}
+
+.section {
+  padding-top: var(--vb-section-padding);
+  padding-bottom: var(--vb-section-padding);
+}
+
+.card {
+  padding: var(--vb-card-padding);
+  border-radius: var(--vb-radius-card);
+  background-color: var(--vb-surface);
+  box-shadow: var(--vb-shadow-warm);
+}
+
+/* ==========================================================================
+   Gradient Utilities
+   ========================================================================== */
+
+.gradient-violet-coral {
+  background: var(--vb-gradient-violet-coral);
+}
+
+.gradient-honey-coral {
+  background: var(--vb-gradient-honey-coral);
+}
+
+/* Gradient text helper — apply to an inline wrapper inside a heading */
+.gradient-text-violet-coral {
+  background: var(--vb-gradient-violet-coral);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-honey-coral {
+  background: var(--vb-gradient-honey-coral);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   Form Elements
+   ========================================================================== */
+
+input,
+textarea,
+select {
+  font-family: var(--vb-font-body);
+  font-size: var(--vb-text-body);
+  color: var(--vb-ink);
+  background-color: var(--vb-surface);
+  border: 1.5px solid var(--vb-line);
+  border-radius: var(--vb-radius-input);
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color var(--vb-transition-fast),
+              box-shadow var(--vb-transition-fast);
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--vb-mute);
+}
+
+/* ==========================================================================
+   Focus Styles (violet outline)
+   ========================================================================== */
+
+:focus-visible {
+  outline: 2px solid var(--vb-violet);
+  outline-offset: 2px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  border-color: var(--vb-violet);
+  box-shadow: 0 0 0 3px rgba(107, 79, 224, 0.15);
+  outline: none;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--vb-violet);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Custom Scrollbar (warm-tinted)
+   ========================================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vb-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vb-line);
+  border-radius: var(--vb-radius-pill);
+  border: 2px solid var(--vb-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vb-mute);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--vb-line) var(--vb-bg);
+}
+
+/* ==========================================================================
+   Button Base
+   ========================================================================== */
+
+button {
+  font-family: var(--vb-font-heading);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all var(--vb-transition-base);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vb-space-sm);
+  padding: 12px 28px;
+  font-size: var(--vb-text-body);
+  font-weight: 600;
+  color: #fff;
+  background: var(--vb-gradient-violet-coral);
+  border: none;
+  border-radius: var(--vb-radius-input);
+  cursor: pointer;
+  transition: opacity var(--vb-transition-fast),
+              transform var(--vb-transition-fast);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vb-space-sm);
+  padding: 12px 28px;
+  font-size: var(--vb-text-body);
+  font-weight: 600;
+  color: var(--vb-violet);
+  background: transparent;
+  border: 1.5px solid var(--vb-violet);
+  border-radius: var(--vb-radius-input);
+  cursor: pointer;
+  transition: background var(--vb-transition-fast),
+              color var(--vb-transition-fast);
+}
+
+.btn-secondary:hover {
+  background: var(--vb-violet-light);
+}
+
+/* ==========================================================================
+   Badge
+   ========================================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-family: var(--vb-font-heading);
+  font-size: var(--vb-text-small);
+  font-weight: 600;
+  border-radius: var(--vb-radius-pill);
+  line-height: 1;
+}
+
+.badge-warm {
+  color: #fff;
+  background: var(--vb-gradient-honey-coral);
+}
+
+.badge-violet {
+  color: #fff;
+  background: var(--vb-violet);
+}

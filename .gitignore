@@ -1,15 +1,44 @@
-# Python
-__pycache__/
-*.pyc
-.env
-venv/
-.venv/
-
-# Node
+# Dependencies
 node_modules/
+.pnp
+.pnp.js
+
+# Next.js
 .next/
+out/
+
+# Database
+*.db
+*.db-journal
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Production
 dist/
+build/
+
+# Uploads
+public/uploads/*
+!public/uploads/.gitkeep
 
 # Misc
 .DS_Store
 *.log
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.vscode/
+.idea/
+
+# Python (legacy)
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# OpenClaude
+.oc_session_id
